@@ -3,19 +3,12 @@
 
 ## Recreating the U.S. Supreme Court Opinion Dataset (1870-2024)
 
-This code accompanies Measuring Jurisprudence, and the data accompanies the following projects:
-- Thalken, Stiglitz, Mimno, Wilkens. [Modeling Legal Reasoning: LM Annotation at the Edge of Human Agreement](https://aclanthology.org/2023.emnlp-main.575/). *EMNLP* 2023.
-- Stiglitz, Thalken. [Historical Trends in Macro-jurisprudence: A Language Model Assessment, 1870-2023](https://digitalcommons.law.umaryland.edu/mlr/vol84/iss1/3/). *Maryland Law Review* 2024.
-- Stiglitz, Thalken. Understanding Change in Jurisprudence. *Under Review.*
-
-Two key datasets are created by code in this repository:
+This repo contains code to recreate the following datasets:
 - [Dataset of U.S. Supreme Court opinions issued between 1870-2024](https://cornell.box.com/s/1awudrm4h0w56jykyauqfnhwg0cnxxzr)
 - [Opinion-level formal scores for opinions issued between 1870-2024](https://cornell.box.com/s/w30qci4sq95tj9gr5tegx6radifqv825)
 
 ###  Data Collection
-There are three opinion text data sources: [Harvard Caselaw Access Project](https://case.law/), the [Supreme Court XML Archive](https://www.supremecourt.gov/xmls/), and [Justia](https://www.justia.com/). **The final dataset can be accessed [here](https://cornell.box.com/s/1awudrm4h0w56jykyauqfnhwg0cnxxzr)**.
-
-Note that a small set (97) cases were not collected even through the Justia scraping step. A list of these cases and their citations are [here](https://cornell.box.com/s/db29c1zlc2xxdj9hfgv6k8h2m42iv7h3). 
+There are three opinion text data sources: [Harvard Caselaw Access Project](https://case.law/), the [Supreme Court XML Archive](https://www.supremecourt.gov/xmls/), and [Justia](https://www.justia.com/). **The final dataset can be accessed [here](https://cornell.box.com/s/1awudrm4h0w56jykyauqfnhwg0cnxxzr)**. Note that a small set of 97 cases were not collected even through the Justia scraping step. A list of these cases and their citations are [here](https://cornell.box.com/s/db29c1zlc2xxdj9hfgv6k8h2m42iv7h3). 
 
 1. **Download and parse data from the [Harvard Caselaw Access Project](https://case.law/)**  
     `python filter_cases.py`
@@ -33,7 +26,7 @@ Note that a small set (97) cases were not collected even through the Justia scra
    a. Create likely Justia case URL   
    `python create_urls.py` 
    - Input: `missing_data.csv` (CSV file of missing case US Reporter citations and docket numbers)  
-   - Output: `missing_data.csv` (adds column with URL to scrape from)
+   - Output: `missing_data.csv` (adds column with URL to scrape)
   
    b. Scrape missing data from Justia   
    `python scrape_justia.py`
@@ -54,11 +47,11 @@ Note that a small set (97) cases were not collected even through the Justia scra
    - Input: 
      - Opinion data: `consolidated_data.csv`
      - External metadata:
-       - `SCDB_Legacy_07_caseCentered_Citation.csv`
-       - `SCDB_2024_01_caseCentered_Citation.csv`
-       - `SCDB_2024_01_justiceCentered_Citation.csv`
-       - `SCDB_Legacy_07_justiceCentered_Citation.csv`
-       - `martin_quinn_justices.csv`
+       - [`SCDB_Legacy_07_caseCentered_Citation.csv`](http://scdb.wustl.edu/data.php?s=6#:~:text=in%20the%20future.-,Case%20Centered%20Data,-Total%20Rows%20%3A%2019%2C861)
+       - [`SCDB_2024_01_caseCentered_Citation.csv`](http://scdb.wustl.edu/data.php?s=1#:~:text=The%20SCDB.-,Case%20Centered%20Data,-Total%20Rows%20%3A%2013%2C928)
+       - [`SCDB_2024_01_justiceCentered_Citation.csv`](http://scdb.wustl.edu/data.php?s=1#:~:text=hide%20file%20sets-,Justice%20Centered%20Data,-Total%20Rows%20%3A%20124%2C770)
+       - [`SCDB_Legacy_07_justiceCentered_Citation.csv`](http://scdb.wustl.edu/data.php?s=6#:~:text=hide%20download%20options-,Justice%20Centered%20Data,-Total%20Rows%20%3A%20172%2C213)
+       - []`martin_quinn_justices.csv`](http://mqscores.wustl.edu/media/2022/justices.csv)
        - `fjc_judges.csv`
        - `HSall_members.csv`
    - Output: `sc_data.csv`
@@ -119,3 +112,10 @@ The following is a description of all fields in the [`reasoning.csv`](https://co
 - `scdbVoteId`:  The justice-centered identifier for the Supreme Court Database (listed as `voteId` in SCDB).
 - `chief`: Chief justice in the given year. 
 - `zformal`: Formal measurement, where higher scores are more formal and lower scores are more grand (i.e. anti formal)
+
+
+
+This code accompanies Measuring Jurisprudence, and the data accompanies the following projects:
+- Thalken, Stiglitz, Mimno, Wilkens. [Modeling Legal Reasoning: LM Annotation at the Edge of Human Agreement](https://aclanthology.org/2023.emnlp-main.575/). *EMNLP* 2023.
+- Stiglitz, Thalken. [Historical Trends in Macro-jurisprudence: A Language Model Assessment, 1870-2023](https://digitalcommons.law.umaryland.edu/mlr/vol84/iss1/3/). *Maryland Law Review* 2024.
+- Stiglitz, Thalken. Understanding Change in Jurisprudence. *Under Review.*
