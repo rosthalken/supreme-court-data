@@ -4,9 +4,9 @@
 ## Recreating the U.S. Supreme Court Opinion Dataset (1870-2024)
 
 This code accompanies Measuring Jurisprudence, and the data accompanies the following projects:
-- Modeling Legal Reasoning
-- Macrojurisprudence
-- Evolution
+- Thalken, Stiglitz, Mimno, Wilkens. [Modeling Legal Reasoning: LM Annotation at the Edge of Human Agreement](https://aclanthology.org/2023.emnlp-main.575/). *EMNLP* 2023.
+- Stiglitz, Thalken. [Historical Trends in Macro-jurisprudence: A Language Model Assessment, 1870-2023](https://digitalcommons.law.umaryland.edu/mlr/vol84/iss1/3/). *Maryland Law Review* 2024.
+- Stiglitz, Thalken. Understanding Change in Jurisprudence. *Under Review.*
 
 Two key datasets are created by code in this repository:
 - [Dataset of U.S. Supreme Court opinions issued between 1870-2024](https://cornell.box.com/s/1awudrm4h0w56jykyauqfnhwg0cnxxzr)
