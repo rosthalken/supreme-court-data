@@ -51,7 +51,7 @@ There are three opinion text data sources: [Harvard Caselaw Access Project](http
        - [`SCDB_2024_01_caseCentered_Citation.csv`](http://scdb.wustl.edu/data.php?s=1#:~:text=The%20SCDB.-,Case%20Centered%20Data,-Total%20Rows%20%3A%2013%2C928)
        - [`SCDB_2024_01_justiceCentered_Citation.csv`](http://scdb.wustl.edu/data.php?s=1#:~:text=hide%20file%20sets-,Justice%20Centered%20Data,-Total%20Rows%20%3A%20124%2C770)
        - [`SCDB_Legacy_07_justiceCentered_Citation.csv`](http://scdb.wustl.edu/data.php?s=6#:~:text=hide%20download%20options-,Justice%20Centered%20Data,-Total%20Rows%20%3A%20172%2C213)
-       - []`martin_quinn_justices.csv`](http://mqscores.wustl.edu/media/2022/justices.csv)
+       - [`martin_quinn_justices.csv`](http://mqscores.wustl.edu/media/2022/justices.csv)
        - `fjc_judges.csv`
        - `HSall_members.csv`
    - Output: `sc_data.csv`
