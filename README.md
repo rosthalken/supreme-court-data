@@ -6,17 +6,17 @@
 ###  Data Collection
 There are three opinion text data sources: [Harvard Caselaw Access Project](https://case.law/), the [Supreme Court XML Archive](https://www.supremecourt.gov/xmls/), and [Justia](https://www.justia.com/). **The final dataset can be accessed [here](https://cornell.box.com/s/1awudrm4h0w56jykyauqfnhwg0cnxxzr)**.
 
-1. Download and parse data from the [Harvard Caselaw Access Project](https://case.law/).  
+1. **Download and parse data from the [Harvard Caselaw Access Project](https://case.law/).**  
     `python filter_cases.py`
     - Input: `data.jsonl`
     - Output: `filtered_data.jsonl`
 
-2. Scrape and parse data from the [Supreme Court XML Archive](https://www.supremecourt.gov/xmls/).  
+2. **Scrape and parse data from the [Supreme Court XML Archive](https://www.supremecourt.gov/xmls/).**  
    `python collect_recent_opinions.py`
    - Output: Scraped XML files and `recent_court_data.csv`
 
 
-3. Scrape missing cases from [Justia](https://www.justia.com/)    
+3. **Scrape missing cases from [Justia](https://www.justia.com/).**   
    *Note that missing cases are identified by finding those that exist in SCDB but are missing form our data based on docket numbers and/or US reporter citations.*  
    
    a. Use docket or case citation for missing data to identify URL to scrape.   
@@ -29,7 +29,7 @@ There are three opinion text data sources: [Harvard Caselaw Access Project](http
    - Input: `fixed_urls.csv` (hand-checked version of `missing_data.csv`)
    - Output: `located_data.csv`
 
-4. Consolidate the Caselaw, XML, and Justia data.  
+4. **Consolidate the Caselaw, XML, and Justia data.**  
    `python consolidate_data.py`
     - Input files:
       - `filtered_data.jsonl`
@@ -38,7 +38,7 @@ There are three opinion text data sources: [Harvard Caselaw Access Project](http
       - Supreme Court Case-Centered Data 
     - Output: `consolidated_data.csv`
 
-5. Organize and clean metadata fields.  
+5. **Organize and clean metadata fields.**  
    `python organize_data.py`
    - Input: 
      - Opinion data: `consolidated_data.csv`
