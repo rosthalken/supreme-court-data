@@ -72,7 +72,7 @@ The code in `lr-measurement/` takes the collected U.S. Supreme Court data and me
    - Input: `sc_data.csv`
    - Output: `data_for_predictions.csv`
 
-2. **Predict with fine-tuned model ** 
+2. **Predict with fine-tuned model**  
     `python lr-measurement/2_predictions.py`
     - Input: 
       - `data_for_predictions.csv`
