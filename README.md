@@ -15,6 +15,8 @@ Two key datasets are created by code in this repository:
 ###  Data Collection
 There are three opinion text data sources: [Harvard Caselaw Access Project](https://case.law/), the [Supreme Court XML Archive](https://www.supremecourt.gov/xmls/), and [Justia](https://www.justia.com/). **The final dataset can be accessed [here](https://cornell.box.com/s/1awudrm4h0w56jykyauqfnhwg0cnxxzr)**.
 
+Note that a small set (97) cases were not collected even through the Justia scraping step. A list of these cases and their citations are [here](https://cornell.box.com/s/db29c1zlc2xxdj9hfgv6k8h2m42iv7h3). 
+
 1. **Download and parse data from the [Harvard Caselaw Access Project](https://case.law/).**  
     `python filter_cases.py`
     - Input: `data.jsonl`
