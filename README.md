@@ -53,7 +53,31 @@ There are three opinion text data sources: [Harvard Caselaw Access Project](http
    - Output: `sc_data.csv`
 
 
+###  Legal Reasoning Measurement  
+The code in `lr-measurement/` takes the collected U.S. Supreme Court data and measures formalism at the opinion level. **The final dataset can be accessed [here]()**.
 
+1. **Prepare data for predictions**  
+   `python lr-measurement/1_prep_predictions.py`
+   - Input: `sc_data.csv`
+   - Output: `data_for_predictions.csv`
+
+2. **Predict with fine-tuned model ** 
+    `python lr-measurement/2_predictions.py`
+    - Input: 
+      - `data_for_predictions.csv`
+      - Fine-tuned model, available for download [here]([rosamondthalken/legal-reasoning](https://huggingface.co/rosamondthalken/legal-reasoning)).
+    - Output: `raw_output`, `combined_output`, `combined_output.csv`
+
+3. **Reorganize prediction output**  
+    `python lr-measurement/3_split_predictions.py`
+    - Input: `combined_output.csv`
+    - Output: `metadata.csv`, `predictions.csv`
+
+4. **Calculate formal measurements**  
+   `python lr-measurement/4_measure_formal.py`
+   - Input: `metadata.csv`, `predictions.csv`
+   - Output: `reasoning.csv`
+   
 
 ## `reasoning.csv`
 
@@ -67,14 +91,11 @@ There are three opinion text data sources: [Harvard Caselaw Access Project](http
 - `case_name`: Name of the case.
 - `date`: Date the case was decided.
 - `year`: Year in which  the case was decided. 
-- `court_url`: High level URL for the court.
-  - TODO: Drop from data?
 - `opinion_type`: High-level opinion category, including `majority`, `concurrence`, `per_curiam`, and `dissent`.
 - `opinion_text`: Full text of the opinion.
 - `zauth`: Lowercased last name of the opinion author. If multiple judges share a last name, a number is appended to the end (e.g. `roberts1` and `roberts2`).
 - `author_ids`: TODO FIGURES OUT MAYBE DROP
-- `mqJId`: The identifier 
-  - TODO: change to "jId"
+- `jid`: The judge identifier in SCDB and Martin Quinn data.
 - `mq`: Dynamic ideology score for the authoring judge in the given year. 
 - `cdate`: Date the opinion author joined the Court. 
 - `tdate`: Date the opinion author left the Court. 
@@ -87,5 +108,4 @@ There are three opinion text data sources: [Harvard Caselaw Access Project](http
 - `scdbCaseId`: The case-centered identifier for the Supreme Court Database (listed as `caseId` in SCDB).
 - `scdbVoteId`:  The justice-centered identifier for the Supreme Court Database (listed as `voteId` in SCDB).
 - `chief`: Chief justice in the given year. 
-- `bpnformal`: 
-- `zformal`
+- `zformal`: Formal measurement, where higher scores are more formal and lower scores are more grand (i.e. anti formal)
