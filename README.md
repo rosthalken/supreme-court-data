@@ -4,7 +4,7 @@
 ## Recreating the Supreme Court Dataset
 
 ###  Data Collection
-There are three opinion text data sources: [Harvard Caselaw Access Project](https://case.law/), the [Supreme Court XML Archive](https://www.supremecourt.gov/xmls/), and [Justia](https://www.justia.com/). The full data can be accessed [here](https://cornell.box.com/s/1awudrm4h0w56jykyauqfnhwg0cnxxzr).
+There are three opinion text data sources: [Harvard Caselaw Access Project](https://case.law/), the [Supreme Court XML Archive](https://www.supremecourt.gov/xmls/), and [Justia](https://www.justia.com/). The full data can be accessed [here](https://cornell.box.com/s/1awudrm4h0w56jykyauqfnhwg0cnxxzr){:target="_blank"}.
 
 1. Download and parse data from the [Harvard Caselaw Access Project](https://case.law/).  
     `python filter_cases.py`
