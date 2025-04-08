@@ -3,6 +3,15 @@
 
 ## Recreating the Supreme Court Dataset
 
+This code accompanies Measuring Jurisprudence, and the data accompanies the following projects:
+- Modeling Legal Reasoning
+- Macrojurisprudence
+- Evolution
+
+Two key datasets are created by code in this repository:
+- [Dataset of U.S. Supreme Court opinions issued between 1870-2024](https://cornell.box.com/s/1awudrm4h0w56jykyauqfnhwg0cnxxzr)
+- [Opinion-level formal scores for opinions issued between 1870-2024](https://cornell.box.com/s/w30qci4sq95tj9gr5tegx6radifqv825)
+
 ###  Data Collection
 There are three opinion text data sources: [Harvard Caselaw Access Project](https://case.law/), the [Supreme Court XML Archive](https://www.supremecourt.gov/xmls/), and [Justia](https://www.justia.com/). **The final dataset can be accessed [here](https://cornell.box.com/s/1awudrm4h0w56jykyauqfnhwg0cnxxzr)**.
 
@@ -17,11 +26,11 @@ There are three opinion text data sources: [Harvard Caselaw Access Project](http
 
 
 3. **Scrape missing cases from [Justia](https://www.justia.com/).**   
-   *Note that missing cases are identified by finding those that exist in SCDB but are missing form our data based on docket numbers and/or US reporter citations.*  
+   *Note that missing cases are identified by finding those that exist in SCDB, but are missing from our data (based on docket numbers and/or US reporter citations).*  
    
-   a. Use docket or case citation for missing data to identify URL to scrape.   
+   a. Create likely Justia case URL.   
    `python create_urls.py` 
-   - Input: `missing_data.csv` (CSV file of missing case US reporter citations and docket numbers)  
+   - Input: `missing_data.csv` (CSV file of missing case US Reporter citations and docket numbers)  
    - Output: `missing_data.csv` (adds column with URL to scrape from)
   
    b. Scrape missing data from Justia.   
@@ -54,7 +63,7 @@ There are three opinion text data sources: [Harvard Caselaw Access Project](http
 
 
 ###  Legal Reasoning Measurement  
-The code in `lr-measurement/` takes the collected U.S. Supreme Court data and measures formalism at the opinion level. **The final dataset can be accessed [here]()**.
+The code in `lr-measurement/` takes the collected U.S. Supreme Court data and measures formalism at the opinion level. **The final dataset can be accessed [here](https://cornell.box.com/s/w30qci4sq95tj9gr5tegx6radifqv825)**.
 
 1. **Prepare data for predictions**  
    `python lr-measurement/1_prep_predictions.py`
@@ -79,7 +88,7 @@ The code in `lr-measurement/` takes the collected U.S. Supreme Court data and me
    - Output: `reasoning.csv`
    
 
-## `reasoning.csv`
+## [`reasoning.csv`](https://cornell.box.com/s/w30qci4sq95tj9gr5tegx6radifqv825)
 
 - `project_case_id`: Identifier issued for every case for this project. 
 - `project_opinion_id`: Identifier issued for every opinion for this project. Identifier begins with `project_case_id` and ends with a number for the opinion number. 
