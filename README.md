@@ -87,8 +87,8 @@ The code in `lr-measurement/` takes the collected U.S. Supreme Court data and me
 The following is a description of all fields in the [`reasoning.csv`](https://cornell.box.com/s/w30qci4sq95tj9gr5tegx6radifqv825) data:  
 
 - `project_case_id`: Identifier issued for every case for this project. 
-- `project_opinion_id`: Identifier issued for every opinion for this project. Identifier begins with `project_case_id` and ends with a number for the opinion number. 
-- `source`: Source of the opinion text. For most opinions this is the [Harvard Caselaw Access Project](https://case.law/) (`hclap`), for most opinions after 2014 this is the [Supreme Court Website](https://www.supremecourt.gov/xmls/) (`scg`) and for a small set of cases missing from the prior two sources, this is [Justia](https://www.justia.com/) (`justia`).
+- `project_opinion_id`: Identifier issued for every opinion for this project. Identifier begins with `project_case_id` and ends with a number for the opinion number, starting at 0 for every case (e.g. `230_0` for the first (`0`th) opinion in `project_case_id` = `230`). 
+- `source`: Source of the opinion text. For most opinions prior to 2014 this is the [Harvard Caselaw Access Project](https://case.law/) (`hclap`), for most opinions starting in 2014 this is the [Supreme Court Website](https://www.supremecourt.gov/xmls/) (`scg`), and for a small set of cases missing from the prior two sources, this is [Justia](https://www.justia.com/) (`justia`).
 - `docket`: Docket number for the case. 
 - `citations`: U.S. reporter citation for the case.
 - `case_url`: URL that holds the specific case text data. 
@@ -119,3 +119,6 @@ This code accompanies Measuring Jurisprudence, and the data accompanies the foll
 - Thalken, Stiglitz, Mimno, Wilkens. [Modeling Legal Reasoning: LM Annotation at the Edge of Human Agreement](https://aclanthology.org/2023.emnlp-main.575/). *EMNLP* 2023.
 - Stiglitz, Thalken. [Historical Trends in Macro-jurisprudence: A Language Model Assessment, 1870-2023](https://digitalcommons.law.umaryland.edu/mlr/vol84/iss1/3/). *Maryland Law Review* 2024.
 - Stiglitz, Thalken. Understanding Change in Jurisprudence. *Under Review.*
+
+If you use this data, please cite:  
+*bibtex to come*
