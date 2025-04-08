@@ -1,7 +1,7 @@
 # supreme-court-data
 
 
-## Recreating the Supreme Court Dataset
+## Recreating the U.S. Supreme Court Opinion Dataset (1870-2024)
 
 This code accompanies Measuring Jurisprudence, and the data accompanies the following projects:
 - Modeling Legal Reasoning
