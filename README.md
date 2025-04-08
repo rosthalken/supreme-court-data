@@ -17,30 +17,30 @@ There are three opinion text data sources: [Harvard Caselaw Access Project](http
 
 Note that a small set (97) cases were not collected even through the Justia scraping step. A list of these cases and their citations are [here](https://cornell.box.com/s/db29c1zlc2xxdj9hfgv6k8h2m42iv7h3). 
 
-1. **Download and parse data from the [Harvard Caselaw Access Project](https://case.law/).**  
+1. **Download and parse data from the [Harvard Caselaw Access Project](https://case.law/)**  
     `python filter_cases.py`
     - Input: `data.jsonl`
     - Output: `filtered_data.jsonl`
 
-2. **Scrape and parse data from the [Supreme Court XML Archive](https://www.supremecourt.gov/xmls/).**  
+2. **Scrape and parse data from the [Supreme Court XML Archive](https://www.supremecourt.gov/xmls/)**  
    `python collect_recent_opinions.py`
    - Output: Scraped XML files and `recent_court_data.csv`
 
 
-3. **Scrape missing cases from [Justia](https://www.justia.com/).**   
+3. **Scrape missing cases from [Justia](https://www.justia.com/)**   
    *Note that missing cases are identified by finding those that exist in SCDB, but are missing from our data (based on docket numbers and/or US reporter citations).*  
    
-   a. Create likely Justia case URL.   
+   a. Create likely Justia case URL   
    `python create_urls.py` 
    - Input: `missing_data.csv` (CSV file of missing case US Reporter citations and docket numbers)  
    - Output: `missing_data.csv` (adds column with URL to scrape from)
   
-   b. Scrape missing data from Justia.   
+   b. Scrape missing data from Justia   
    `python scrape_justia.py`
    - Input: `fixed_urls.csv` (hand-checked version of `missing_data.csv`)
    - Output: `located_data.csv`
 
-4. **Consolidate the Caselaw, XML, and Justia data.**  
+4. **Consolidate the Caselaw, XML, and Justia data**  
    `python consolidate_data.py`
     - Input files:
       - `filtered_data.jsonl`
@@ -49,7 +49,7 @@ Note that a small set (97) cases were not collected even through the Justia scra
       - Supreme Court Case-Centered Data 
     - Output: `consolidated_data.csv`
 
-5. **Organize and clean metadata fields.**  
+5. **Organize and clean metadata fields**  
    `python organize_data.py`
    - Input: 
      - Opinion data: `consolidated_data.csv`
@@ -90,7 +90,8 @@ The code in `lr-measurement/` takes the collected U.S. Supreme Court data and me
    - Output: `reasoning.csv`
    
 
-## [`reasoning.csv`](https://cornell.box.com/s/w30qci4sq95tj9gr5tegx6radifqv825)
+## Metadata Fields
+The following is a description of all fields in the [`reasoning.csv`](https://cornell.box.com/s/w30qci4sq95tj9gr5tegx6radifqv825) data:  
 
 - `project_case_id`: Identifier issued for every case for this project. 
 - `project_opinion_id`: Identifier issued for every opinion for this project. Identifier begins with `project_case_id` and ends with a number for the opinion number. 
