@@ -65,7 +65,7 @@ Note that a small set (97) cases were not collected even through the Justia scra
 
 
 ###  Legal Reasoning Measurement  
-The code in `lr-measurement/` takes the collected U.S. Supreme Court data and measures formalism at the opinion level. **The final dataset can be accessed [here](https://cornell.box.com/s/w30qci4sq95tj9gr5tegx6radifqv825)**.
+The code in `lr-measurement/` takes the collected U.S. Supreme Court data and measures formalism at the opinion level. **The final dataset can be accessed [here](https://cornell.box.com/s/w30qci4sq95tj9gr5tegx6radifqv825)**. The expert-annotated dataset is [here](https://drive.google.com/file/d/1i7dcshwcgCBF3TVLbNBC-Hutw8qVreTq/view?usp=sharing). 
 
 1. **Prepare data for predictions**  
    `python lr-measurement/1_prep_predictions.py`
