@@ -97,7 +97,6 @@ The code in `lr-measurement/` takes the collected U.S. Supreme Court data and me
 - `source`: Source of the opinion text. For most opinions this is the [Harvard Caselaw Access Project](https://case.law/) (`hclap`), for most opinions after 2014 this is the [Supreme Court Website](https://www.supremecourt.gov/xmls/) (`scg`) and for a small set of cases missing from the prior two sources, this is [Justia](https://www.justia.com/) (`justia`).
 - `docket`: Docket number for the case. 
 - `citations`: U.S. reporter citation for the case.
-  - TODO: change name? 
 - `case_url`: URL that holds the specific case text data. 
 - `case_name`: Name of the case.
 - `date`: Date the case was decided.
@@ -105,7 +104,6 @@ The code in `lr-measurement/` takes the collected U.S. Supreme Court data and me
 - `opinion_type`: High-level opinion category, including `majority`, `concurrence`, `per_curiam`, and `dissent`.
 - `opinion_text`: Full text of the opinion.
 - `zauth`: Lowercased last name of the opinion author. If multiple judges share a last name, a number is appended to the end (e.g. `roberts1` and `roberts2`).
-- `author_ids`: TODO FIGURES OUT MAYBE DROP
 - `jid`: The judge identifier in SCDB and Martin Quinn data.
 - `mq`: Dynamic ideology score for the authoring judge in the given year. 
 - `cdate`: Date the opinion author joined the Court. 
