@@ -69,7 +69,7 @@ The code in `lr-measurement/` takes the collected U.S. Supreme Court data and me
     `python lr-measurement/2_predictions.py`
     - Input: 
       - `data_for_predictions.csv`
-      - Fine-tuned model, available for download [here]([rosamondthalken/legal-reasoning](https://huggingface.co/rosamondthalken/legal-reasoning)).
+      - Fine-tuned model, available for download [here](https://huggingface.co/rosamondthalken/legal-reasoning).
     - Output: `raw_output`, `combined_output`, `combined_output.csv`
 
 3. **Reorganize prediction output**  
